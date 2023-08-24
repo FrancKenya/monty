@@ -9,12 +9,13 @@
 
 void create_node(stack_t **head, unsigned int n)
 {
-stack_t, *new, *temp = *head;
+stack_t *new, *temp = *head;
 
 new = malloc(sizeof(stack_t));
 if (new == NULL)
 {
-printf("Error\n");
+fprintf(stderr, "Error: malloc failed\n");
+exit(EXIT_FAILURE);
 }
 if (new != NULL && temp != NULL)
 {

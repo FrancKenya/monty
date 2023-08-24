@@ -1,6 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
-
+#include <unistd.h>
 /**
 * main - Main function
 * @argc: number of arguments
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 FILE *file;
 stack_t *stack = NULL;
-char *op, *arg, *line = NULL;
+char *opcode, *arg, *line = NULL;
 size_t len = 0;
 unsigned int line_number = 1;
 
@@ -30,16 +30,16 @@ exit(EXIT_FAILURE);
 }
 while (getline(&line, &len, file) != -1)
 {
-op = strtok(line, " \t\n");
-arg = strtok(NULL, " \t\n");
-if (op != NULL)
+opcode = strtok(line, " \n\t");
+arg = strtok(NULL, " \n\t");
+if (opcode != NULL)
 {
-execute(&stack, arg, op, line_number)
+execute(&stack, arg, opcode, line_number);
 }
 line_number++;
 }
 free_stack(stack);
 fclose(file);
 free(line);
-return (EXIT_SUCCESS);
+return (0);
 }

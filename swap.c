@@ -8,7 +8,7 @@
 * Return: void
 */
 
-void handle_swap(stack_t **head, unsigned int num)
+void handle_swap_command(stack_t **head, unsigned int num)
 {
 	int t_value;
 	stack_t *temp = *head;

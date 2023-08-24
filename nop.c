@@ -1,7 +1,14 @@
 #include "monty.h"
 
-void handle_nop(stack_t **head, unsigned int num)
+/**
+* handle_nop - deals with no argument input
+* @head: unused
+* @num: unused
+*
+* Return: void
+*/
+
+void handle_nop(stack_t **head, unsigned int __attribute__((unused)) num)
 {
-	void(head); /* suppress unused attribute head pointer */
-	void(num); /* suppress unused attribute num */
+	/* suppress unused attribute head pointer */
 }

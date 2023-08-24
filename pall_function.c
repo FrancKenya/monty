@@ -7,11 +7,10 @@
 * Return: void
 */
 
-void handle_pall(stack_t **head, unsigned int num)
+void handle_pall(stack_t **head, unsigned int __attribute__((unused)) num)
 {
 	stack_t *temp; /* temporary pointer */
 	int i;
-	void (num);
 
 	temp = *head; /* initialized to transverse the list */
 

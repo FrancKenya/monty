@@ -1,6 +1,8 @@
 #include "monty.h"
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+
 /**
 * main - Main function
 * @argc: number of arguments

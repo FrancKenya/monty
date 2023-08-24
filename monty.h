@@ -31,6 +31,12 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void handle_pall(stack_t **head, unsigned int num);
+void create_node(stack_t **head, unsigned int n);
+void handle_push(stack_t **head, char *args, unsigned int num);
+void handle_pint(stack_t **head, unsigned int num);
+void handle_pop(stack_t **head, unsigned int num);
+void handle_nop(stack_t **head, unsigned int num);
+void handle_add_opcode(stack_t **head, unsigned int num);
 
-void handle_pall(stack_t **head)
 #endif

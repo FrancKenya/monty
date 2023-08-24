@@ -2,13 +2,9 @@
 
 /**
 * handle_nop - deals with no argument input
-* @head: unused
-* @num: unused
-*
 * Return: void
 */
 
-void handle_nop(stack_t **head, unsigned int __attribute__((unused)) num)
+void handle_nop(void)
 {
-	/* suppress unused attribute head pointer */
 }

@@ -1,5 +1,5 @@
-#include "monty.h"
 #include <stdio.h>
+#include "monty.h"
 #include <unistd.h>
 #include <string.h>
 
@@ -30,17 +30,17 @@ if (!file)
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 exit(EXIT_FAILURE);
 }
-while (getline(&line, &len, file) != -1)
+while (fgets(line, len, file) != NULL)
 {
-opcode = strtok(line, " \n\t");
-arg = strtok(NULL, " \n\t");
+opcode = strtok(line, " \t\n");
+arg = strtok(NULL, " \t\n");
 if (opcode != NULL)
 {
-execute(&stack, arg, opcode, line_number);
+exec(&stack, arg, opcode, line_number);
 }
 line_number++;
 }
-free_stack(stack);
+free_stack(&stack);
 fclose(file);
 free(line);
 return (0);

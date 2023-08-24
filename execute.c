@@ -1,16 +1,16 @@
 #include "monty.h"
 #include <string.h>
 /**
-* execute - used to call the other functions
+* exec - used to call the other functions
 * @stack: double pointer to the head of the stack
 * @arg: argument passed
-* @op: opcode
+* @opcode: opcode
 * @line_number: argument for number of lines
 *
 */
 
 
-void execute(stack_t **stack, char *arg, char *opcode, unsigned int line_number)
+void exec(stack_t **stack, char *arg, char *opcode, unsigned int line_number)
 {
 if (strcmp(opcode, "push") == 0)
 {
@@ -38,7 +38,7 @@ handle_add_opcode(stack, line_number);
 }
 else if (strcmp(opcode, "nop") == 0)
 {
-handle_nop(stack, line_number);
+handle_nop();
 }
 else
 {

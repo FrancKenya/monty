@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* handle_swap = swaps top 2 elements;
+* handle_swap_command - swaps top 2 elements;
 * @head: double pointer to stack head
 * @num: line number
 *

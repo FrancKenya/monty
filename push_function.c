@@ -11,20 +11,20 @@ void create_node(stack_t **head, unsigned int n)
 {
 stack_t *new, *temp = *head;
 
-new = malloc(sizeof(stack_t));
-if (new == NULL)
+new = malloc(sizeof(stack_t)); /* allocate memory */
+if (new == NULL) /* handle malloc failure */
 {
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
-new->n = n;
-new->next = *head;
-new->prev = NULL;
+new->n = n; /* assign data to the new node */
+new->next = *head; /* position it at the top */
+new->prev = NULL; /* update the prev pointer to NULL */
 if (temp != NULL)
 {
 temp->prev = new;
 }
-*head = new;
+*head = new; /* update head pointer to point to new node */
 }
 
 /**
@@ -40,16 +40,16 @@ void handle_push(stack_t **head, char *args, unsigned int num)
 {
 int i;
 
-if (!args)
+if (!args) /* handle 0 argument input */
 {
 fprintf(stderr, "L%d: usage: push integer\n", num);
 exit(EXIT_FAILURE);
 }
-i = atoi(args);
-if (i <= 0 && args[0] != '0')
+i = atoi(args); /* convert to integer argument put */
+if (i <= 0 && args[0] != '0') /* check for errors in conversion */
 {
 fprintf(stderr, "L%d: usage: push integer\n", num);
 exit(EXIT_FAILURE);
 }
-create_node(head, i);
+create_node(head, i); /* call the create node function if no errors */
 }

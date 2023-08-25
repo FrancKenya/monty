@@ -45,5 +45,5 @@ void free_stack(stack_t **head);
 #include <stdio.h>
 #include <stddef.h>
 #include <unistd.h>
-
+#include <string.h>
 #endif

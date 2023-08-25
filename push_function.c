@@ -17,13 +17,13 @@ if (new == NULL)
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
-if (new != NULL && temp != NULL)
-{
 new->n = n;
-temp->prev = new;
-}
 new->next = *head;
 new->prev = NULL;
+if (temp != NULL)
+{
+temp->prev = new;
+}
 *head = new;
 }
 

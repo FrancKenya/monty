@@ -45,9 +45,9 @@ if (line_c == NULL)
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE); }
 strcpy(line_c, line);
-exec(&stack, arg, opcode, line_number); }
-line_number++;
+exec(&stack, arg, opcode, line_number);
 free(line_c); }
+line_number++; }
 free_stack(&stack);
 fclose(file);
 free(line);

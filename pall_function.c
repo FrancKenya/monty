@@ -14,14 +14,14 @@ void handle_pall(stack_t **head, unsigned int __attribute__((unused)) num)
 
 	temp = *head; /* initialized to transverse the list */
 
-	if (temp == NULL)
+	if (temp == NULL) /* check if node is empty */
 	{
 		return;
 	}
-	while (temp != NULL)
+	while (temp != NULL) /* if not empty */
 	{
 		i = temp->n;
-		printf("%d\n", i);
-		temp = temp->next;
+		printf("%d\n", i); /* print data */
+		temp = temp->next; /* update pointer */
 	}
 }

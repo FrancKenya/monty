@@ -9,12 +9,12 @@
 
 void free_stack(stack_t **head)
 {
-stack_t *temp = *head;
+stack_t *tmp; /* temporary pointer */
 
-while (head != NULL)
+while (*head != NULL) /* while not empty */
 {
-temp = (*head)->next;
-free(*head);
-*head = temp;
+tmp = (*head)->next; /* assign address of next node */
+free(*head); /* free the first node */
+*head = tmp; /* point the head to the top node */
 }
 }

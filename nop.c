@@ -7,4 +7,5 @@
 
 void handle_nop(void)
 {
+/* not doing anything */
 }

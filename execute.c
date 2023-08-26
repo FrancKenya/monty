@@ -68,10 +68,6 @@ else if (strcmp(opcode, "rotr") == 0)
 {
         handle_rotr_opcode(stack, line_number);
 }
-else if (strcmp(opcode, "pstr") == 0)
-{
-        handle_pstr_opcode(stack, line_number);
-}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

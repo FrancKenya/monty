@@ -22,7 +22,7 @@ void handle_pchar_opcode(stack_t **head, unsigned int num)
 
     ascii_value = temp->n;
 
-    if (ascii_value < 0 || ascii_value > 128)
+    if (ascii_value < 0 || ascii_value >= 128)
     {
         fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
         exit(EXIT_FAILURE);

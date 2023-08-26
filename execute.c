@@ -40,6 +40,10 @@ else if (strcmp(opcode, "nop") == 0)
 {
 handle_nop();
 }
+else if (strcmp(opcode, "sub") == 0)
+{
+	handle_sub_opcode(stack, line_number);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

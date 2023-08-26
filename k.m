@@ -1,2 +1,2 @@
-#push 12
-#pall
+push -1
+pchar

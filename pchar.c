@@ -27,7 +27,15 @@ void handle_pchar_opcode(stack_t **head, unsigned int num)
         fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
         exit(EXIT_FAILURE);
     }
-
+	if (ascii_value >= 0)
+	{	
     putchar(ascii_value);
     putchar('\n');
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
+		exit(EXIT_FAILURE);
+	}
+
 }

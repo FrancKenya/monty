@@ -35,6 +35,7 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE); }
 while (fgets(line, len, file) != NULL) /* read file and store in line buffer */
 {
+	if (line[0] != '#') {
 opcode = strtok(line, " \n\t"); /* sepaate command from command argument */
 arg = strtok(NULL, " \n\t");
 if (opcode != NULL)
@@ -47,6 +48,7 @@ exit(EXIT_FAILURE); }
 strcpy(line_c, line); /* copy from line to line_c */
 exec(&stack, arg, opcode, line_number); /* call the exec function */
 free(line_c); }
+}
 line_number++; }
 free_stack(&stack);
 fclose(file);

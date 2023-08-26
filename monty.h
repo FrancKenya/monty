@@ -31,6 +31,10 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void handle_rotr_opcode(stack_t **head, unsigned int num/*unused*/);
+void handle_rotl_opcode(stack_t **head, unsigned int num /*unused*/);
+void handle_pchar_opcode(stack_t **head, unsigned int num);
+void handle_mod_opcode(stack_t **head, unsigned int num);
 void handle_mul_opcode(stack_t **head, unsigned int num);
 void handle_div_opcode(stack_t **head, unsigned int num);
 void handle_sub_opcode(stack_t **head, unsigned int num);

@@ -52,6 +52,22 @@ else if (strcmp(opcode, "mul") == 0)
 {
 	handle_mul_opcode(stack, line_number);
 }
+else if (strcmp(opcode, "mod") == 0)
+{
+	 handle_mod_opcode(stack, line_number);
+}
+else if (strcmp(opcode, "pchar") == 0)
+{
+        handle_pchar_opcode(stack, line_number);
+}
+else if (strcmp(opcode, "rotl") == 0)
+{
+        handle_rotl_opcode(stack, line_number);
+}
+else if (strcmp(opcode, "rotr") == 0)
+{
+        handle_rotr_opcode(stack, line_number);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

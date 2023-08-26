@@ -45,11 +45,17 @@ if (!args) /* handle 0 argument input */
 fprintf(stderr, "L%d: usage: push integer\n", num);
 exit(EXIT_FAILURE);
 }
-i = atoi(args); /* convert to integer argument put */
-if (i <= 0 && args[0] != '0') /* check for errors in conversion */
-{
-fprintf(stderr, "L%d: usage: push integer\n", num);
-exit(EXIT_FAILURE);
-}
+for (i = 0; args[i] != '\0'; i++)
+    {
+        if (i == 0 && (args[i] == '-' || args[i] == '+'))
+            continue;
+
+        if (args[i] < '0' || args[i] > '9')
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", num);
+            exit(EXIT_FAILURE);
+        }
+    }
+ i = atoi(args); /* convert to integer argument put */
 create_node(head, i); /* call the create node function if no errors */
 }

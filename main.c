@@ -18,6 +18,7 @@ stack_t *stack = NULL;
 char *opcode, *line_c, *arg, *line = NULL;
 size_t len = MAX_LINE_LEN;
 unsigned int line_number = 1;
+char *trimmed_line = line;
 
 if (argc != 2) /* check if argument count is > or < 2 */
 {
@@ -35,7 +36,11 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE); }
 while (fgets(line, len, file) != NULL) /* read file and store in line buffer */
 {
-	if (line[0] != '#') {
+	/* Remove leading whitespace*/
+	while (*trimmed_line == ' ' || *trimmed_line == '\t')
+	trimmed_line++;
+
+	if (trimmed_line[0] != '\0' && trimmed_line[0] != '#') {
 opcode = strtok(line, " \n\t"); /* sepaate command from command argument */
 arg = strtok(NULL, " \n\t");
 if (opcode != NULL)

@@ -12,6 +12,9 @@
 
 void exec(stack_t **stack, char *arg, char *opcode, unsigned int line_number)
 {
+	if (opcode[0] == '#') {
+	return;
+}
 if (strcmp(opcode, "push") == 0)
 {
 handle_push(stack, arg, line_number);

@@ -44,6 +44,10 @@ else if (strcmp(opcode, "sub") == 0)
 {
 	handle_sub_opcode(stack, line_number);
 }
+else if (strcmp(opcode, "div") == 0)
+{
+	handle_div_opcode(stack, line_number);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

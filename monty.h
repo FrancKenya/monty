@@ -31,7 +31,7 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+void handle_div_opcode(stack_t **head, unsigned int num);
 void handle_sub_opcode(stack_t **head, unsigned int num);
 void handle_swap_command(stack_t **head, unsigned int num);
 void handle_pall(stack_t **head, unsigned int num);

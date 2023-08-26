@@ -41,7 +41,7 @@ while (fgets(line, len, file) != NULL) /* read file and store in line buffer */
 	trimmed_line++;
 
 	if (trimmed_line[0] != '\0' && trimmed_line[0] != '#') {
-opcode = strtok(line, " \n\t"); /* sepaate command from command argument */
+opcode = strtok(trimmed_line, " \n\t"); /* sepaate command from command argument */
 arg = strtok(NULL, " \n\t");
 if (opcode != NULL)
 {
